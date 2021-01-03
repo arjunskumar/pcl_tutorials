@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="pcl_test" type="pcl_test_node" name="pcl_test_node" output="screen"/>
+     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find pcl_test)/rviz/pcl_test.rviz" />
+</launch>
