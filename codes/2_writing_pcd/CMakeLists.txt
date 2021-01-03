@@ -1,0 +1,25 @@
+# Minimum required version
+CMAKE_MINIMUM_REQUIRED (VERSION 2.8 FATAL_ERROR) 
+
+# Package name 
+PROJECT (pcd_write)          
+MESSAGE ( STATUS ${CMAKE_PROJECT_NAME} )   
+
+SET(COMPILE_FLAGS "-std=c++11") 
+
+# Dependancy Package
+FIND_PACKAGE (PCL 1.9 REQUIRED)  
+
+INCLUDE_DIRECTORIES(
+    ${PCL_INCLUDE_DIRS}
+    )
+
+LINK_DIRECTORIES(${PCL_LIBRARY_DIRS})
+
+ADD_DEFINITIONS(${COMPILE_FLAGS})
+ADD_DEFINITIONS(${PCL_DEFINITIONS})
+
+# pcd_write is the executable name
+ADD_EXECUTABLE (pcd_write pcd_write.cpp) 
+
+TARGET_LINK_LIBRARIES(pcd_write ${PCL_LIBRARIES})    
