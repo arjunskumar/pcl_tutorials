@@ -37,7 +37,8 @@ cd pcl-1.9.1
 mkdir release && cd release 
 cmake -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_PREFIX=/usr \
 -DBUILD_GPU=ON-DBUILD_apps=ON -DBUILD_examples=ON \ 
--DCMAKE_INSTALL_PREFIX=/usr .. make
+-DCMAKE_INSTALL_PREFIX=/usr .. 
+make -j16
 
 sudo make install
 sudo apt-get install -y pcl-tools
